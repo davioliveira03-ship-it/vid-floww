@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="VidFlow — uma biblioteca de vídeos para aprender, criar e compartilhar.">
+    <title>VidFlow — Descubra vídeos</title>
+    <link rel="icon" type="image/png" href="./img/Favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/flexbox.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho__esquerda">
+            <button class="cabecalho__menu icon-button" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-lateral">
+                <span></span><span></span><span></span>
+            </button>
+            <a class="cabecalho__logo" href="#" aria-label="VidFlow, página inicial">
+                <img src="./img/VidFlow--Logo-light-mode.png" alt="Logo VidFlow">
+            </a>
+        </div>
+
+        <form class="cabecalho__pesquisar form__pesquisa" id="form-pesquisa" role="search">
+            <label class="sr-only" for="barra-pesquisa">Pesquisar vídeos</label>
+            <div class="pesquisa__campo">
+                <input type="search" id="barra-pesquisa" class="pesquisar__input" placeholder="Pesquisar" autocomplete="off">
+                <button class="pesquisar__teclado icon-button" id="teclado-pesquisa" type="button" aria-label="Usar teclado" title="Usar teclado">
+                    <img src="./img/topbar/keyboard.png" alt="Ícone de teclado">
+                </button>
+            </div>
+            <button class="pesquisar__botao" type="submit" aria-label="Pesquisar" title="Pesquisar">
+                <img src="./img/topbar/search.png" alt="Ícone de lupa">
+            </button>
+            <button class="cabecalho__audio icon-button" id="audio-pesquisa" type="button" aria-label="Pesquisar por voz" title="Pesquisar por voz">
+                <img src="./img/topbar/Mic.png" alt="Ícone de microfone">
+            </button>
+        </form>
+
+        <div class="cabecalho__icones" aria-label="Ações da conta">
+            <button class="cabecalho__videos icon-button" data-action="criar" type="button" aria-label="Criar vídeo" title="Criar vídeo">
+                <img src="./img/topbar/video_call.png" alt="">
+            </button>
+            <button class="cabecalho__apps icon-button" data-action="apps" type="button" aria-label="Aplicativos" title="Aplicativos">
+                <img src="./img/topbar/apps.png" alt="">
+            </button>
+            <button class="cabecalho__notificacoes icon-button" data-action="notificacoes" type="button" aria-label="Notificações" title="Notificações">
+                <img src="./img/topbar/notifications.png" alt="">
+                <span class="notificacao__badge" aria-hidden="true">3</span>
+            </button>
+            <button class="cabecalho__avatar" data-action="conta" type="button" aria-label="Abrir menu da conta" title="Abrir menu da conta">
+                <img src="./img/topbar/Avatar.png" alt="Avatar da conta">
+            </button>
+        </div>
+    </header>
+
+    <button class="sidebar-overlay" id="sidebar-overlay" type="button" aria-label="Fechar menu"></button>
+
+    <aside class="menu__lateral" id="menu-lateral" aria-label="Navegação principal">
+        <nav class="menu__container">
+            <ul class="menu__lista menu__lista--principal">
+                <li><a href="#" class="menu__itens menu__itens--ativo" data-view="inicio"><span class="menu__icone icone__inicio"></span><span>Início</span></a></li>
+                <li><a href="#" class="menu__itens" data-view="explorar"><span class="menu__icone icone__explorar"></span><span>Explorar</span></a></li>
+                <li><a href="#" class="menu__itens" data-view="shorts"><span class="menu__icone icone__shorts"></span><span>Shorts</span></a></li>
+                <li><a href="#" class="menu__itens" data-view="inscricoes"><span class="menu__icone icone__inscricoes"></span><span>Inscrições</span></a></li>
+            </ul>
+            <hr class="menu__divisor">
+            <ul class="menu__lista">
+                <li><a href="#" class="menu__itens" data-view="biblioteca"><span class="menu__icone icone__biblioteca"></span><span>Biblioteca</span></a></li>
+                <li><a href="#" class="menu__itens" data-view="historico"><span class="menu__icone icone__historico"></span><span>Histórico</span></a></li>
+                <li><a href="#" class="menu__itens" data-view="seus-videos"><span class="menu__icone icone__seus-videos"></span><span>Seus vídeos</span></a></li>
+                <li><a href="#" class="menu__itens" data-view="assistir-tarde"><span class="menu__icone icone__assistir-tarde"></span><span>Assistir mais tarde</span></a></li>
+                <li><a href="#" class="menu__itens" data-view="videos-curtidos"><span class="menu__icone icone__videos-curtidos"></span><span>Vídeos curtidos</span></a></li>
+            </ul>
+            <hr class="menu__divisor">
+            <h2 class="menu__titulo">Inscrições</h2>
+            <ul class="menu__lista menu__lista--canais">
+                <li><a href="#" class="menu__itens" data-channel="Alura"><img class="canal__avatar" src="./img/sidebar/Avatar_Alura.png" alt=""><span>Alura</span></a></li>
+                <li><a href="#" class="menu__itens" data-channel="Átila Iamarino"><img class="canal__avatar" src="./img/sidebar/Avatar_Atila.png" alt=""><span>Átila Iamarino</span></a></li>
+                <li><a href="#" class="menu__itens" data-channel="Gaveta"><img class="canal__avatar" src="./img/sidebar/Avatar_Gaveta.png" alt=""><span>Gaveta</span></a></li>
+                <li><a href="#" class="menu__itens" data-channel="Filipe Deschamps"><img class="canal__avatar" src="./img/sidebar/Avatar_Deschamps.png" alt=""><span>Filipe Deschamps</span></a></li>
+                <li><a href="#" class="menu__itens" data-channel="Rafa"><img class="canal__avatar" src="./img/sidebar/Avatar_Rafa.png" alt=""><span>Rafaella Ballerini</span></a></li>
+            </ul>
+            <button class="menu__mostrar-mais" type="button" data-action="mostrar-inscricoes"><span>Mostrar mais</span><img src="./img/sidebar/keyboard_arrow_down.png" alt=""></button>
+        </nav>
+    </aside>
+
+    <main class="secao__videos" id="conteudo-principal">
+        <section class="hero__intro" aria-labelledby="titulo-principal">
+            <div>
+                <p class="eyebrow">Sua central de aprendizado</p>
+                <h1 id="titulo-principal">Vídeos para você</h1>
+                <p class="hero__descricao">Explore ideias, tutoriais e conversas que ajudam você a criar o próximo projeto.</p>
+            </div>
+            <div class="hero__status"><span class="status__dot"></span><span>Catálogo atualizado</span></div>
+        </section>
+
+        <section class="filtros" aria-label="Filtros de categoria">
+            <div class="filtros__scroll" id="categorias">
+                <button class="superior__item superior__item--ativo" data-category="Tudo" type="button">Tudo</button>
+                <button class="superior__item" data-category="Front-end" type="button">Front-end</button>
+                <button class="superior__item" data-category="Programação" type="button">Programação</button>
+                <button class="superior__item" data-category="Mobile" type="button">Mobile</button>
+                <button class="superior__item" data-category="Data Science" type="button">Data Science</button>
+                <button class="superior__item" data-category="Carreira" type="button">Carreira</button>
+                <button class="superior__item" data-category="Design" type="button">Design</button>
+            </div>
+        </section>
+
+        <div class="catalogo__toolbar">
+            <p class="catalogo__resultado" id="resultado-contagem" aria-live="polite">Carregando vídeos...</p>
+            <label class="ordenacao" for="ordenar-videos"><span>Ordenar por</span><select id="ordenar-videos"><option value="recentes">Mais recentes</option><option value="populares">Mais populares</option><option value="alfabetica">Ordem alfabética</option></select></label>
+        </div>
+
+        <section aria-labelledby="titulo-principal">
+            <ul class="videos__container" id="videos__container" aria-live="polite"></ul>
+            <div class="estado-vazio" id="estado-vazio" hidden>
+                <div class="estado-vazio__icone">⌕</div>
+                <h2>Nenhum vídeo encontrado</h2>
+                <p>Tente outro termo de pesquisa ou escolha uma categoria diferente.</p>
+                <button class="botao-secundario" id="limpar-filtros" type="button">Limpar filtros</button>
+            </div>
+        </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <footer class="rodape"><span>VidFlow</span><span>Aprender é construir todos os dias.</span></footer>
+
+    <script src="./script.js" defer></script>
+</body>
+</html>
